@@ -1,3 +1,4 @@
+from .app.get_balance import Balance
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import ApiKeys
@@ -5,5 +6,6 @@ from .models import ApiKeys
 
 
 def index(request):
-    apiDetails = ApiKeys.objects.all()
-    return render(request, 'index.html', {'apiDetails': apiDetails})
+    apiDetails = ApiKeys.objects.get(name="Veda")
+    balance = Balance(apiDetails.apiKey, apiDetails.secretKey)
+    return render(request, 'index.html', {'balance': balance})
