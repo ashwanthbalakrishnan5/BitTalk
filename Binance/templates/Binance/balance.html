@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      h1 {
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+        margin: 20px 0;
+      }
+      /* Style the table */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 16px;
+        color: #333;
+        border: 1px solid #ddd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Style the table headers */
+      th {
+        background-color: #4caf50;
+        color: white;
+        font-weight: bold;
+        text-align: left;
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+
+      /* Style the table cells */
+      td {
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+
+      /* Style alternate rows */
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      /* Style the table on hover */
+      table:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        transform: scale(1.01);
+        transition: all 0.2s ease-in-out;
+      }
+
+      /* Style the table on focus */
+      table:focus {
+        outline: none;
+      }
+
+      /* Style the table on active */
+      table:active {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transform: scale(0.99);
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+    </style>
+    <title>BitTalk</title>
+  </head>
+  <body>
+    <h1>Balance</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Asset</th>
+          <th>Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for bal in balance %}
+        <tr>
+          <td>{{bal.asset}}</td>
+          <td>{{bal.balance}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

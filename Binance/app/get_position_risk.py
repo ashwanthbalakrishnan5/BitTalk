@@ -10,10 +10,12 @@ from binance.error import ClientError
 def Positions(key, secret):
     um_futures_client = UMFutures(key, secret)
     try:
-        response = um_futures_client.get_position(recvWindow=6000)
-        for i in range(len(response)):
+        response = um_futures_client.get_position_risk(recvWindow=6000)
+        i = len(response)-1
+        while (i >= 0):
             if float(response[i]['positionAmt']) == 0:
-                response[i].pop()
+                del response[i]
+            i -= 1
         return response
         # logging.info(response)
     except ClientError as error:

@@ -3,4 +3,4 @@ from django.shortcuts import render
 
 
 def Home(request):
-    return render(request, 'index.html')
+    return render(request, 'bittalk/index.html')
