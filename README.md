@@ -2,7 +2,7 @@
 BitTalk is a website that displays real-time cryptocurrency prices and market information, powered by the Binance API.
 
 ## Live Demo
-A live demo of this website can be found at: http://bittalk.ap-south-1.elasticbeanstalk.com/binance/
+A live demo of this website can be found at: http://bittalk.ap-south-1.elasticbeanstalk.com/
 
 ## Technologies Used
 This website is built with Python, Django, and the Binance API. It is hosted on AWS Elastic Beanstalk.
